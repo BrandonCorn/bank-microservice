@@ -78,6 +78,20 @@ public class LoansController {
             .body(foundLoan);
   }
 
+  @Operation(
+          summary = "Loan update REST API",
+          description = "Request to update Loan details"
+  )
+  @ApiResponses({
+          @ApiResponse(
+                  responseCode = "200",
+                  description = "Http Status OK"
+          ),
+          @ApiResponse(
+                  responseCode = "417",
+                  description = "Http Status Expectation Failed"
+          )
+  })
   @PutMapping(path = "/update")
   public ResponseEntity<ResponseDto> updateLoanRequest(@RequestBody LoansDto loansDto){
     boolean isUpdated = iLoanService.updateLoan(loansDto);
@@ -93,6 +107,20 @@ public class LoansController {
     }
   }
 
+  @Operation(
+          summary = "Loan delete REST API",
+          description = "Request to delete Loan details"
+  )
+  @ApiResponses({
+          @ApiResponse(
+                  responseCode = "200",
+                  description = "Http Status OK"
+          ),
+          @ApiResponse(
+                  responseCode = "404",
+                  description = "Http Status Expectation Failed"
+          )
+  })
   @DeleteMapping(path = "/delete")
   public ResponseEntity<ResponseDto> deleteLoanRequest(@RequestParam String mobileNumber){
     boolean isDeleted = iLoanService.deleteLoan(mobileNumber);
