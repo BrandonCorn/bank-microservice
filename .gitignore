@@ -15,3 +15,41 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+.idea
+
+*.yml
+!example.yml 
+*.yaml
+!example.yaml 
+
+# Docker image files
+*.tar
+
+# Docker Compose files
+docker-compose.override.yml
+docker-compose.override.yaml
+docker-compose.yml
+docker-compose.yaml
+
+# Docker container runtime files
+*.pid
+
+# Local development files
+.env
+
+# Exclude Docker context files
+.dockerignore
+
+# Exclude Docker cache
+.docker/
+
+# Exclude Docker build artifacts
+Dockerfile~
+
+# Exclude Docker Swarm mode deployment files
+docker-stack.yml
+docker-stack.yaml
+
+# Exclude generated files during Docker build
+.DS_Store
